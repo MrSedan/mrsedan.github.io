@@ -2,21 +2,67 @@
 *{
     margin: 0;
     padding: 0;
-    background: #a8a8a8;
     font-family: 'Montserrat', "Open Sans", sans-serif;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     text-decoration: none;
 }
+body{
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
+}
+.large-header {
+    position: relative;
+    width: 100%;
+    background: #111;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    z-index: 1;
+ }
+ #demo-canvas{
+     height: 100% !important;
+ }
 .card{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 50px;
+    height: 350px;
     border: solid black 1px;
     border-radius: 15px;
     width: 400px;
     text-align: center;
-    background: #ffffff;
+    background: #273c75;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.card img{
+    width: 250px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+}
+#name{
+    margin-top: 15px;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.networks{
+    width: auto;
+}
+ul{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+li{
+    margin: 0 28px;
+}
+a i{
+    color: white;
+    font-size: 40px;
+    line-height: 50px;
 }
