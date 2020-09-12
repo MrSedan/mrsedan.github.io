@@ -3,66 +3,88 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', "Open Sans", sans-serif;
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
     text-decoration: none;
 }
 body{
-    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo-bg.jpg");
-}
-.large-header {
-    position: relative;
-    width: 100%;
-    background: #111;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(back.jpg) no-repeat center;
     background-size: cover;
-    background-position: center center;
-    z-index: 1;
- }
- #demo-canvas{
-     height: 100% !important;
- }
-.card{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 350px;
-    border: solid black 1px;
-    border-radius: 15px;
-    width: 400px;
+}
+.profile{
+    background: #006266;
     text-align: center;
-    background: #273c75;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    color: white;
-}
-.card img{
-    width: 250px;
-    margin: 20px auto;
-    border-radius: 20px;
+    width: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 60px 40px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 }
-#name{
-    margin-top: 15px;
-    font-weight: 900;
-    font-size: 20px;
-    text-transform: uppercase;
+.avatar{
+    margin: auto;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 8px;
+    background: linear-gradient(130deg, #A3CB38, #1289A7);
+    background-size: 200% 200%;
+    animation: back-animation 3s linear infinite;
 }
-.networks{
-    width: auto;
+@keyframes back-animation{
+    0%{
+        background-position: left bottom;
+    }
+    25%{
+        background-position: left top;
+    }
+    50%{
+        background-position: right top;
+    }
+    75%{
+        background-position: right bottom;
+    }
+    100%{
+        background-position: left bottom;
+    }
 }
-ul{
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
+
+.avatar img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
 }
-li{
-    margin: 0 28px;
-}
-a i{
+
+.name{
     color: white;
-    font-size: 40px;
-    line-height: 50px;
+    font-size: 28px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.desc{
+    color:#A3CB38;
+    font-size: 18px;
+}
+.social{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    
+}
+.social a{
+    width: 56px;
+    height: 40px;
+    font-size: 28px;
+    color: white;
+    transition: .2s linear;
+}
+.social a:hover{
+    color:#A3CB38;
+}
+
+.ps{
+    color: white;
+    font-size: 12px;
 }
