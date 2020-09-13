@@ -20,7 +20,7 @@ body{
     width: 400px;
     overflow: hidden;
     border-radius: 10px;
-    padding: 60px 40px;
+    padding: 60px 40px 20px 40px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
 }
 .avatar{
@@ -87,4 +87,50 @@ body{
 .ps{
     color: white;
     font-size: 12px;
+}
+
+.footer button{
+    position: relative;
+    background: transparent;
+    border: none;
+    color: white;
+    left: 45%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.footer i{
+    font-size: 20px;
+    transition: .3s linear;
+}
+.footer i:hover{
+    color: #A3CB38;
+}
+.skills-list{
+    display: none;
+    transition: .3s linear;
+    color: white;
+}
+.active-footer{
+    display: flex;
+    align-content: space-around;
+    flex-flow: row wrap;
+    height: 100px;
+}
+.skills-list li{
+    margin-right: 30px;
+}
+.skills p{
+    display: block;
+    color: white;
+    text-transform: uppercase;
+}
+.disactive{
+    display: none !important;
+}
+
+.footer .active i{
+    transform: rotate(180deg);
+}
+.footer .active i:hover{
+    color: #A3CB38;
 }
