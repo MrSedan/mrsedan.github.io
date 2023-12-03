@@ -2,7 +2,11 @@
 export default {
   content: ['./index.html', '*/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        gradientAnim: 'gradientAnimation 3s ease-in-out infinite',
+      },
+    },
   },
   plugins: [],
 };

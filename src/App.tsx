@@ -1,8 +1,16 @@
+import { SHA256 } from 'crypto-js';
+import './App.css';
+
 function App() {
+  const emailHash = SHA256('elpashevs@bk.ru');
   return (
-    // bg-[#303952]
-    <div className="bg-gradient-to-tr from-[#e15f41] to-[#786fa6] w-screen h-screen">
-      <div className="bg-[#596275] absolute top-[50%] left-[50%] md:h-[500px] md:w-[1000px] transform -translate-x-1/2 -translate-y-1/2 rounded-[50px] w-[300px] h-[60%]"></div>
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="absolute inset-0 z-0">
+        <div className="bg-gradient-to-r from-[#f8a5c2] to-[#ea8685] animate-gradientAnim inset-0 absolute bg-[length:200%_200%]"></div>
+      </div>
+      <div className="relative z-10 p-6 shadow-lg bg-[#786fa6] md:h-[500px] md:w-[1000px] rounded-[50px] w-[300px] h-[400px]">
+        <img src={`https://gravatar.com/avatar/${emailHash}?s=2100`} alt="avatar" className="rounded-full" />
+      </div>
     </div>
   );
 }
