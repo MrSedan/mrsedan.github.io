@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
   <body>
     <div class="profile">
       <div class="avatar">
-        <img src="avatar.jpg" alt="" />
+        <img src="https://www.gravatar.com/avatar/f2c9d66a3a60a5937940a82141d233cb" alt="" />
       </div>
       <div class="name">Sergey Elpashev</div>
       <div class="desc">Developer</div>
@@ -23,26 +23,124 @@
       </div>
       <div class="ps">You can click on icons!</div>
       <div class="footer">
-        <button type="button" class="footer-btn"><i class="fas fa-arrow-down"></i></button>
+        <button type="button" class="footer-btn">
+          <span class="btn-text">My Skills</span>
+          <i class="fas fa-arrow-down"></i>
+        </button>
         <div class="skills">
-          <p class="disactive" id="scn">My Skills</p>
           <ul class="skills-list">
-            <li>Golang</li>
-            <li>Python</li>
-            <li>C++</li>
-            <li>Frontend (HTML5, JavaScript, CSS)</li>
-            <li>C#</li>
-            <li>Source 2 Developer</li>
+            <li>PHP (1C-Bitrix)</li>
+            <li>Python (aiogram)</li>
+            <li>JavaScript/TypeScript</li>
+            <li>React & Next.js</li>
+            <li>Tailwind CSS</li>
+            <li>Docker & Docker-compose</li>
+            <li>Linux</li>
           </ul>
         </div>
       </div>
     </div>
 
     <script>
-      $('.footer-btn').click(function () {
-        $('.skills-list').toggleClass('active-footer');
-        $('#scn').toggleClass('disactive');
-        $('.footer-btn').toggleClass('active');
+      $(document).ready(function () {
+        $('.footer-btn').click(function () {
+          const skillsList = $('.skills-list');
+          const btnText = $('.btn-text');
+          const btn = $(this);
+          const profile = $('.profile');
+
+          if (skillsList.hasClass('active-footer')) {
+            // Hide skills
+            skillsList.removeClass('active-footer');
+            btnText.text('My Skills');
+            btn.removeClass('active');
+            profile.removeClass('expanded');
+          } else {
+            // Show skills with staggered animation
+            skillsList.addClass('active-footer');
+            btnText.text('Hide Skills');
+            btn.addClass('active');
+            profile.addClass('expanded');
+
+            // Animate each skill item with delay
+            skillsList.find('li').each(function (index) {
+              $(this).css('animation-delay', index * 0.1 + 's');
+              $(this).addClass('animate-in');
+            });
+          }
+        });
+
+        function floatAnimation() {
+          const profile = $('.profile');
+          let isFloating = false;
+
+          setInterval(() => {
+            if (!isFloating) {
+              profile.animate(
+                {
+                  transform: 'translateY(-5px)',
+                },
+                1000,
+              );
+              isFloating = true;
+            } else {
+              profile.animate(
+                {
+                  transform: 'translateY(5px)',
+                },
+                1000,
+              );
+              isFloating = false;
+            }
+          }, 2000);
+        }
+
+        floatAnimation();
+
+        $('.social a').click(function (e) {
+          const ripple = $('<span class="ripple"></span>');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+
+          ripple.css({
+            width: size,
+            height: size,
+            left: x + 'px',
+            top: y + 'px',
+          });
+
+          $(this).append(ripple);
+
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+
+        const desc = $('.desc');
+        const text = desc.text();
+        desc.text('');
+
+        let i = 0;
+        const typeWriter = () => {
+          if (i < text.length) {
+            desc.text(desc.text() + text.charAt(i));
+            i++;
+            setTimeout(typeWriter, 100);
+          }
+        };
+
+        setTimeout(typeWriter, 1000);
+
+        $(window).on('mousemove', function (e) {
+          const x = e.clientX / window.innerWidth;
+          const y = e.clientY / window.innerHeight;
+
+          $('.profile').css({
+            transform: `translateY(${y * 10}px) translateX(${x * 10}px)`,
+          });
+        });
       });
     </script>
   </body>
