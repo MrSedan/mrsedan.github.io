@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MrSedan's Page</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://cdn.lineicons.com/5.1/line/lineicons.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="profile">
-        <div class="avatar">
-            <img src="avatar.jpg" alt="">
+      <div class="avatar">
+        <img src="avatar.jpg" alt="" />
+      </div>
+      <div class="name">Sergey Elpashev</div>
+      <div class="desc">Developer</div>
+      <div class="social">
+        <a href="https://t.me/mrsedan"><i class="lni lni-telegram"></i></a>
+        <a href="https://nwaifu.su"><i class="lni lni-www"></i></a>
+        <a href="git.nwaifu.su/sergey"><i class="lni lni-git"></i></a>
+        <a href="https://github.com/MrSedan"><i class="lni lni-github"></i></a>
+      </div>
+      <div class="ps">You can click on icons!</div>
+      <div class="footer">
+        <button type="button" class="footer-btn"><i class="fas fa-arrow-down"></i></button>
+        <div class="skills">
+          <p class="disactive" id="scn">My Skills</p>
+          <ul class="skills-list">
+            <li>Golang</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Frontend (HTML5, JavaScript, CSS)</li>
+            <li>C#</li>
+            <li>Source 2 Developer</li>
+          </ul>
         </div>
-        <div class="name">Sergey Elpashev</div>
-        <div class="desc">Developer</div>
-        <div class="social">
-            <a href="https://vk.com/mrsedan"><i class="fab fa-vk"></i></a>
-            <a href="https://t.me/mrsedan"><i class="fab fa-telegram"></i></a>
-            <a href="https://github.com/MrSedan"><i class="fab fa-github"></i></a>
-            <a href="https://gitlab.com/MrSedan"><i class="fab fa-gitlab"></i></a>
-        </div>
-        <div class="ps">You can click on icons!</div>
-        <div class="footer">
-            <button type="button" class="footer-btn"><i class="fas fa-arrow-down"></i></button>
-            <div class="skills">
-                <p class="disactive" id="scn">My Skills</p>
-                <ul class="skills-list">
-                    <li>Golang</li>
-                    <li>Python</li>
-                    <li>C++</li>
-                    <li>Frontend (HTML5, JavaScript, CSS)</li>
-                    <li>C#</li>
-                    <li>Source 2 Developer</li>
-                </ul>
-            </div>
-        </div>
+      </div>
     </div>
 
     <script>
-        $('.footer-btn').click(function() {
-            $('.skills-list').toggleClass('active-footer')
-            $('#scn').toggleClass('disactive')
-            $('.footer-btn').toggleClass('active')
-        })
+      $('.footer-btn').click(function () {
+        $('.skills-list').toggleClass('active-footer');
+        $('#scn').toggleClass('disactive');
+        $('.footer-btn').toggleClass('active');
+      });
     </script>
-
-</body>
+  </body>
 </html>
